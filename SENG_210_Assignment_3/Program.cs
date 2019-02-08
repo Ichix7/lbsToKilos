@@ -25,15 +25,14 @@ namespace SENG_210_Assignment_3
         }
 
 
-        public char ConvertToKilograms(int x)
+        public char ConvertToKilograms(decimal x)
         {
             // tester method will use finish variable for do while loop
             char finish = 'n';
             // variable to loop in this method to check if user wants to repeat
             string repeat = "";
             // conversion from pound to kilograms
-            int answer = x / 2;
-            answer = answer - (answer / 10);
+            decimal answer = x  * 0.453592;
 
 
             Console.Clear();
