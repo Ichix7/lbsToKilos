@@ -12,58 +12,33 @@ namespace SENG_210_Assignment_3
         static void Main(string[] args)
         {
 
-            //loop with exit command
+            String weight = "";
 
-            //Request weight from user
-
-            //Call function - input is user answer
-
-            //return answer
-			//Thank you Jordan
-			//Add comments here
-            
-        }
-
-
-        public char ConvertToKilograms(decimal x)
-        {
-            // tester method will use finish variable for do while loop
-            char finish = 'n';
-            // variable to loop in this method to check if user wants to repeat
-            string repeat = "";
-            // conversion from pound to kilograms
-            decimal answer = x  * 0.453592;
-
-
-            Console.Clear();
-            Console.WriteLine("*****Pounds to Kilograms Converter*****");
-
-            // do loop to see if user wants to end program or repeat from beginning
             do
             {
-                Console.WriteLine("\n{0} Pounds is {1} Kilograms. \nWould you like to convert another number? Enter y/n", x, answer);
-                repeat = Console.ReadLine().ToLower();
+                Console.WriteLine("Please input weight in Lbs");
+                weight = Console.ReadLine();
 
-                if (repeat == "y")
-                {
-                    repeat = "n";
-                    Console.Clear();
-                    return finish;
-                }
-                if (repeat == "n")
-                {
-                    finish = 'y';
-                    return finish;
-                }
-                else
-                {
-                    Console.WriteLine("\nNot a valid response, please enter either a 'y' or 'n'. \nPress Enter to try again.");
-                    Console.ReadLine();
-                    Console.Clear();
-                }
-            } while (repeat != "n");
+                Console.WriteLine("Your weight in  kilo's is: {0}", ConvertToKilograms(weight));
+                CleanScreen();
+                
+            } while (weight != "q");
+         }
 
-            return finish;
+
+        public static double ConvertToKilograms(string weight)
+        {
+            double weightInKilos = 0.453592;
+            double weightInLbs = Convert.ToDouble(weight);
+
+            return weightInKilos * weightInLbs;
+        }
+
+        static public void CleanScreen()
+        {
+            Console.WriteLine("<Press Enter>");
+            Console.ReadLine();
+            Console.Clear();
         }
 
     }
