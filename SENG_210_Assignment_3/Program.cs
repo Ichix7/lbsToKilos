@@ -23,10 +23,16 @@ namespace SENG_210_Assignment_3
         }
 
 
-        static void kiloToLbs(String Num)
+        public char ConvertToKilograms(int x)
         {
-            //conversions go here
-
+            char finish = 'n';
+            string repeat = "";
+            int answer = x / 2;
+            answer = answer - (answer / 10);
+            Console.Clear();
+            Console.WriteLine("*****Pounds to Kilograms Converter*****");
+            return finish;
         }
+
     }
 }
