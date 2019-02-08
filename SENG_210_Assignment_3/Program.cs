@@ -25,10 +25,47 @@ namespace SENG_210_Assignment_3
         }
 
 
-        static void kiloToLbs(String Num)
+        public char ConvertToKilograms(int x)
         {
-            //conversions go here
+            // tester method will use finish variable for do while loop
+            char finish = 'n';
+            // variable to loop in this method to check if user wants to repeat
+            string repeat = "";
+            // conversion from pound to kilograms
+            int answer = x / 2;
+            answer = answer - (answer / 10);
 
+
+            Console.Clear();
+            Console.WriteLine("*****Pounds to Kilograms Converter*****");
+
+            // do loop to see if user wants to end program or repeat from beginning
+            do
+            {
+                Console.WriteLine("\n{0} Pounds is {1} Kilograms. \nWould you like to convert another number? Enter y/n", x, answer);
+                repeat = Console.ReadLine().ToLower();
+
+                if (repeat == "y")
+                {
+                    repeat = "n";
+                    Console.Clear();
+                    return finish;
+                }
+                if (repeat == "n")
+                {
+                    finish = 'y';
+                    return finish;
+                }
+                else
+                {
+                    Console.WriteLine("\nNot a valid response, please enter either a 'y' or 'n'. \nPress Enter to try again.");
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+            } while (repeat != "n");
+
+            return finish;
         }
+
     }
 }
